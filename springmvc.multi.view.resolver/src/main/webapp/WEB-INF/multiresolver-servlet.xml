@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.lapth82.springmvc.multiresolver.controller" />
+
+	<!-- This bean sets up the Velocity environment for us based on a root path 
+		for templates. Optionally, a properties file can be specified for more control 
+		over the Velocity environment, but the defaults are pretty sane for file 
+		based template loading. -->
+	<bean id="velocityConfig"
+		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<property name="resourceLoaderPath" value="/WEB-INF/views/" />
+	</bean>
+
+	<!-- Velocity template resolver -->
+	<bean 
+		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+		<property name="cache" value="true" />
+		<property name="prefix" value="" />
+		<property name="suffix" value=".vm" />
+		<property name="order" value="1" />
+		
+		<!-- if you want to use the Spring Velocity macros, set this property to 
+			true -->
+		<property name="exposeSpringMacroHelpers" value="true" />
+	</bean>
+	
+	<!-- JSP resolver -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="2" />
+	</bean>
+</beans>
