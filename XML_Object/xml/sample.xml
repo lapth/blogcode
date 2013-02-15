@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<group>
+	<name> a group </name>
+	
+	<user>
+		<name> user 1</name>
+		<password> pass 1</password>
+	</user>
+	
+	<user>
+		<name> user 2</name>
+		<password> pass 2</password>
+	</user>
+</group>
