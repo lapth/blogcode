@@ -25,8 +25,7 @@
 		<property name="prefix" value="" />
 		<property name="suffix" value=".vm" />
 		
-		<!-- if you want to use the Spring Velocity macros, set this property to 
-			true -->
+		<!-- if you want to use the Spring Velocity macros, set this property to true -->
 		<property name="exposeSpringMacroHelpers" value="true" />
 	</bean>
 </beans>
