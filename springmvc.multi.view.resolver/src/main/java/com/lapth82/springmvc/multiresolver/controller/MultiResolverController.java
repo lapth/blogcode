@@ -1,7 +1,9 @@
 package com.lapth82.springmvc.multiresolver.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
@@ -24,12 +26,20 @@ public class MultiResolverController {
 	@RequestMapping(value="/fromvm")
 	public ModelAndView fromvm(HttpServletResponse response) throws IOException{
 		
-		User user = new User();
-		user.setName("lapth82");
-		user.setTitle("blogger");
+		User user1 = new User();
+		user1.setName("lapth82");
+		user1.setTitle("blogger");
 		
-		Map<String, User> model = new HashMap<String, User>();
-		model.put("user", user);
+		User user2 = new User();
+		user2.setName("user2");
+		user2.setTitle("blogger");
+		
+		List<User> lstUser = new ArrayList<User>();
+		lstUser.add(user1);
+		lstUser.add(user2);
+		
+		Map<String, List<User>> model = new HashMap<String, List<User>>();
+		model.put("users", lstUser);
 		
 		return new ModelAndView("fromvm", model);
 	}
