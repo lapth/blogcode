@@ -1,6 +1,5 @@
 package com.lapth82.springmvc.multiresolver.controller;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,13 +17,13 @@ import com.lapth82.springmvc.multiresolver.model.User;
 public class MultiResolverController {
 
 	@RequestMapping(value="/fromjsp")
-	public ModelAndView fromJSP(HttpServletResponse response) throws IOException{
+	public ModelAndView fromJSP(HttpServletResponse response) {
 		
 		return new ModelAndView("fromjsp");
 	}
 	
 	@RequestMapping(value="/fromvm")
-	public ModelAndView fromvm(HttpServletResponse response) throws IOException{
+	public ModelAndView fromvm(HttpServletResponse response) {
 		
 		User user1 = new User();
 		user1.setName("lapth82");
