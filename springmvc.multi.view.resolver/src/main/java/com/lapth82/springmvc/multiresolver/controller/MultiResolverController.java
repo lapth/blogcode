@@ -23,7 +23,7 @@ public class MultiResolverController {
 	}
 	
 	@RequestMapping(value="/fromvm")
-	public ModelAndView fromvm(HttpServletResponse response) {
+	public ModelAndView fromVM(HttpServletResponse response) {
 		
 		User user1 = new User();
 		user1.setName("lapth82");
