@@ -8,7 +8,7 @@ import com.lapth82.springmvc.form.jsr303.constraint.PasswordMatch;
 @PasswordMatch(password="password", repassword="repassword")
 public class User {
 
-	@NotEmpty(message="user.firstName")
+	@NotEmpty(message="First Name is required")
 	private String firstName;
 	
 	@NotEmpty
