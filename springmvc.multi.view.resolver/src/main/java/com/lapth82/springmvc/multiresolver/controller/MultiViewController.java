@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lapth82.springmvc.multiresolver.model.User;
@@ -14,12 +15,12 @@ import com.lapth82.springmvc.multiresolver.model.User;
 @Controller
 public class MultiViewController {
 	
-	@RequestMapping("/fromjsp")
+	@RequestMapping(value="/fromjsp", method = RequestMethod.GET)
 	public ModelAndView fromJSP() {
 		return new ModelAndView("fromjsp");
 	}
 	
-	@RequestMapping("/fromvm")
+	@RequestMapping(value="/fromvm", method = RequestMethod.GET)
 	public ModelAndView fromVM() {
 
 		User user1 = new User();
@@ -37,7 +38,7 @@ public class MultiViewController {
 		Map<String, List<User>> model = new HashMap<String, List<User>>();
 		model.put("users", lstUser);
 
-		return new ModelAndView("home", model);
+		return new ModelAndView("fromvm", model);
 	}
 
 }
